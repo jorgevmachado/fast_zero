@@ -75,4 +75,7 @@
    alembic upgrade head
    // Volta uma versão.
    alembic downgrade -1
+   // Cria uma migração versão vazia, sem autogenerate
+   alembic revision -m "create seeds"
+   
 ```
