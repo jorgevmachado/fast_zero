@@ -7,6 +7,9 @@ authors = ["jorge.machado-Kraken <jorge.vmachado@hotmail.com>"]
 [tool.poetry.dependencies]
 python = ">=3.12,<4.0"
 fastapi = {extras = ["standard"], version = "^0.128.1"}
+sqlalchemy = "^2.0.46"
+pydantic-settings = "^2.12.0"
+alembic = "^1.18.3"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

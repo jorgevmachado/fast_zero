@@ -14,3 +14,65 @@
 ```bash
    fastapi dev fast_zero/app.py
 ```
+
+## Ferramentas usadas:
+
+### Poetry
+#### Ferramenta para gerenciamento de dependências
+```bash
+   pipx install poetry
+   pipx inject poetry poetry-plugin-shell
+   poetry python install 3.13
+   poetry env use 3.13
+   poetry install
+```
+
+### FastAPI
+#### Ferramenta para criar APIs
+```bash
+   poetry add fastapi[standard]
+```
+
+### Ruff
+#### Ferramenta para análise estática de código(Um linter e formatador bem poderoso e rápido)
+```bash
+   poetry add --group dev ruff
+```
+
+### Pytest
+#### Ferramenta para testes automatizados
+```bash
+   poetry add --group dev pytest pytest-cov
+```
+
+### taskipy
+#### Ferramenta para automatizar tarefas(Um MakeFile do Python)
+```bash
+   poetry add --group dev taskipy
+```
+
+### sqlalchemy
+#### Ferramenta para gerenciamento de banco de dados
+```bash
+   poetry add sqlalchemy
+```
+
+### pydantic-settings
+#### Ferramenta para gerenciamento de configurações usando Pydantic
+```bash
+   poetry add pydantic-settings
+```
+
+### alembic
+#### Ferramenta para gerenciamento de migrações de dados de banco de dados
+```bash
+   poetry add alembic
+   // Cria a estrutura de pastas de migração.
+   alembic init migrations
+   // cria uma versão de dados.
+   alembic revision --autogenerate -m "create users table"
+   // Atualiza para a ultima versão.
+   alembic upgrade head
+   // Volta uma versão.
+   alembic downgrade -1
+```
