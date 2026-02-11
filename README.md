@@ -79,3 +79,31 @@
    alembic revision -m "create seeds"
    
 ```
+
+### pwdlib
+#### Ferramenta para gerenciamento de senhas
+```bash
+   poetry add "pwdlib[argon2]"
+```
+
+### JWT
+#### Ferramenta para gerar tokens JWT
+```bash
+   poetry add pyjwt
+```
+
+### tzdata
+#### Ferramenta para gerenciamento de fuso horário
+```bash
+   poetry add tzdata
+```
+
+### Para gerar uma secret no python, basta entrar no python:
+```bash
+python
+
+import secrets
+
+secrets.token_hex()
+```
+
