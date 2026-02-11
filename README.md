@@ -98,6 +98,25 @@
    poetry add tzdata
 ```
 
+### sqlalchemy[asyncio]
+#### Ferramenta para gerenciamento de banco de dados com async
+```bash
+   poetry add "sqlalchemy[asyncio]"
+```
+
+### aiosqlite
+#### Ferramenta para gerenciamento de banco de dados sqlite com async
+```bash
+   poetry add aiosqlite
+```
+
+### pytest-asyncio
+#### Ferramenta para testes assíncronos
+```bash
+   poetry add --group dev pytest-asyncio
+```
+
+
 ### Para gerar uma secret no python, basta entrar no python:
 ```bash
 python
@@ -107,3 +126,12 @@ import secrets
 secrets.token_hex()
 ```
 
+### Para executar um unico teste, pode se usar o seguinte comando:
+```bash
+task test -k test_create_user
+```
+
+### Comando para saber todos os testes presentes no projeto.
+```bash
+task test --collect-only
+```

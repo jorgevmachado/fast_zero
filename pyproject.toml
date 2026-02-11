@@ -7,12 +7,13 @@ authors = ["jorge.machado-Kraken <jorge.vmachado@hotmail.com>"]
 [tool.poetry.dependencies]
 python = ">=3.12,<4.0"
 fastapi = {extras = ["standard"], version = "^0.128.1"}
-sqlalchemy = "^2.0.46"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.46"}
 pydantic-settings = "^2.12.0"
 alembic = "^1.18.3"
 pwdlib = {extras = ["argon2"], version = "^0.3.0"}
 pyjwt = "^2.11.0"
 tzdata = "^2025.3"
+aiosqlite = "^0.22.1"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -23,7 +24,8 @@ dev = [
     "ruff (>=0.15.0,<0.16.0)",
     "pytest (>=9.0.2,<10.0.0)",
     "pytest-cov (>=7.0.0,<8.0.0)",
-    "taskipy (>=1.14.1,<2.0.0)"
+    "taskipy (>=1.14.1,<2.0.0)",
+    "pytest-asyncio (>=1.3.0,<2.0.0)"
 ]
 [tool.ruff]
 line-length = 79
@@ -40,6 +42,11 @@ quote-style = 'single'
 [tool.pytest.ini_options]
 pythonpath = "."
 addopts = '-p no:warnings'
+asyncio_default_fixture_loop_scope = 'function'
+
+[tool.coverage.run]
+core = "ctrace"
+concurrency = ["thread", "greenlet"]
 
 [tool.taskipy.tasks]
 lint = 'ruff check'
