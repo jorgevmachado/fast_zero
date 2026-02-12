@@ -116,6 +116,18 @@
    poetry add --group dev pytest-asyncio
 ```
 
+### factory-boy
+#### Ferramenta para gerar dados falsos
+```bash
+   poetry add --group dev factory-boy
+```
+
+
+### freezegun
+#### Ferramenta para gerar datas falsas
+```bash
+   poetry add --group dev freezegun
+```
 
 ### Para gerar uma secret no python, basta entrar no python:
 ```bash
