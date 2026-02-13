@@ -2,7 +2,7 @@ from http import HTTPStatus
 from typing import Annotated
 
 from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy import select
+from sqlalchemy import String, cast, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from fast_zero.database import get_session
@@ -56,7 +56,9 @@ async def list_todos(
         )
 
     if todo_filter.state:
-        query = query.filter(Todo.state.contains(todo_filter.state))
+        query = query.filter(
+            cast(Todo.state, String).contains(todo_filter.state)
+        )
 
     todos = await session.scalars(
         query.offset(todo_filter.skip).limit(todo_filter.limit)

@@ -1,3 +1,5 @@
+# import asyncio
+# import sys
 from http import HTTPStatus
 
 from fastapi import FastAPI
@@ -8,6 +10,13 @@ from fast_zero.schemas import (
     Message,
 )
 
+# Caso esteja executando em terminal do windows,
+# é necessário usar o WindowsSelectorEventLoopPolicy para evitar erros
+# relacionados ao loop de eventos do asyncio.
+# O código abaixo verifica se o sistema operacional é Windows e,
+# se for, define a política de loop de eventos apropriada.
+# if sys.platform == 'win32':
+#     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 app = FastAPI()
 
 app.include_router(users.router)

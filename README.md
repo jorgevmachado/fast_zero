@@ -129,6 +129,19 @@
    poetry add --group dev freezegun
 ```
 
+
+### psycopg[binary]
+#### Ferramenta para gerenciamento de banco de dados postgresql
+```bash
+   poetry add "psycopg[binary]"
+```
+
+### testcontainers
+#### Ferramenta para gerenciamento de banco de dados docker
+```bash
+   poetry add --group dev testcontainers
+```
+
 ### Para gerar uma secret no python, basta entrar no python:
 ```bash
 python
@@ -146,4 +159,12 @@ task test -k test_create_user
 ### Comando para saber todos os testes presentes no projeto.
 ```bash
 task test --collect-only
+```
+
+### Usando a aplicação com o docker
+```bash
+# Criar a imagem
+docker build -t "fast_zero" .
+# Iniciar a imagem
+docker run -it --name fastzeroapp -p 8000:8000 fast_zero:latest
 ```
