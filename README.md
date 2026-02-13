@@ -168,3 +168,8 @@ docker build -t "fast_zero" .
 # Iniciar a imagem
 docker run -it --name fastzeroapp -p 8000:8000 fast_zero:latest
 ```
+
+### Executar o workflow do github de forma local
+nektos/act
+https://github.com/nektos/act
+https://nektosact.com/installation/index.html
